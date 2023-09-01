@@ -44,19 +44,6 @@
 
 		createWheelOfDoom(segmentDepth);
 	};
-
-	function rotateTheWheelOfDoom() {
-		let rotateAngle = (36 * Math.PI) / 180;
-		if (x) {
-			x.getCanvas().translate(10, 10);
-			x.getCanvas().rotate(rotateAngle);
-			x.getCanvas().translate(-10, -10);
-		}
-	}
-
-	for (let i = 0; i < 100; i++) {
-		rotateTheWheelOfDoom();
-	}
 </script>
 
 <html lang="en">
