@@ -1,0 +1,10 @@
+[package]
+name = "database_manager"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+mongodb = "2.7.0"
+tokio = "1.32.0"
