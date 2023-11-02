@@ -24,6 +24,20 @@
 	}
 
 	$: render = ({ context, width, height }) => {
+		/**
+		 * Time to work this shit out
+		 * what do we need everytime we are entering a film?
+		 * we ideally wouldnt change every single colour in the circle. would be better to just change the newest one
+		 * but to do that then we wouldnt want to be looping through the number of films 
+		 * or we would need some sort of way of identifying if we have already added a section for that film/state
+		 * i dont wanna get too deep into state rn so fuck that 
+		 * 
+		 * ok other things
+		 * we need the text on each segment of the circle - lets work on this one first
+		 * we want the circle to actually rotate
+		 * we want an arrow that will select a segment of the circle once it has stopped spinning 
+		 * 
+		 */
 		let off = 10,
 			horizontalCoord = (width - off) / 2,
 			verticalCoord = (height - off) / 2,
@@ -36,7 +50,10 @@
 				context.moveTo(horizontalCoord, verticalCoord);
 				context.arc(horizontalCoord, verticalCoord, radius, i * pieAngle, (i + 1) * pieAngle);
 				context.lineWidth = 2;
-				context.fillStyle = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
+				// context.fillText(films[i], 2, 2);
+				context.fillText("eldar", 2,2);
+				
+				// context.fillStyle = '#' + ((Math.random() * 0xffffff) << 0).toString(16);
 				context.fill();
 				context.closePath();
 			}
