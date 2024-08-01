@@ -15,6 +15,7 @@
      * Called when the search box input is changed
      */
 	function on_search_type() {
+        if (search_contents === "") films = [];
 		if (search_contents.length < 2) return;
 		search();
 	}
