@@ -3,6 +3,9 @@
 
 	let search_contents = '';
 
+    /** @type{any[]} */
+    let films = [];
+
     function on_search_type() {
         if (search_contents.length < 2) return;
         search();
@@ -23,7 +26,8 @@
         fetch(url, options)
             .then((res) => res.json())
             .then((json) => {
-                console.log(json)
+                console.log(json["results"])
+                films = json["results"].slice(0, 6)
             })
             .catch((err) => console.error('error:' + err));
     }
@@ -38,3 +42,9 @@
 	bind:value={search_contents}
 />
 <button on:click={() => search()}>Search</button>
+
+<br>
+{#each films as film}
+    {film.title}
+    <br>
+{/each}
