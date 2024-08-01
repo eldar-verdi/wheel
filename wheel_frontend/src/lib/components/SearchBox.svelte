@@ -1,22 +1,27 @@
 <script lang="ts">
 	import { PUBLIC_TMDB_API_KEY } from '$env/static/public';
 
-	let search_contents = '';
+	let search_contents: string = '';
 
     type Film = {
-        title: string,
-        release_date: string,
-        overview: string
+        title: string;
+        release_date: string;
+        overview: string;
     };
 
 	let films: Film[] = [];
 
+    /**
+     * Called when the search box input is changed
+     */
 	function on_search_type() {
-        if (search_contents === "") films = [];
 		if (search_contents.length < 2) return;
 		search();
 	}
 
+    /**
+     * Searches the TMDB api using the value from `search_contents` and sets `films`
+     */
 	function search() {
 		const url = `https://api.themoviedb.org/3/search/movie?query=${search_contents}&include_adult=false&language=en-US&page=1`;
 

@@ -17,9 +17,9 @@
 		"@melt-ui/svelte": "^0.83.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.5.19",
+		"@sveltejs/vite-plugin-svelte": "3.1.1",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
-		"@sveltejs/vite-plugin-svelte": "3.1.1",
 		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte": "^2.30.0",
@@ -34,6 +34,7 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"svelte-canvas": "^0.9.3"
+		"svelte-canvas": "^0.9.3",
+		"svelte-preprocess": "^6.0.2"
 	}
 }
